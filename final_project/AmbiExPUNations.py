@@ -27,10 +27,9 @@ def get_puns(path):
   # puns: {'row_0': {'id': 't_1', 'pun': ['When', 'the', ... ]}}
   return pd.DataFrame.from_dict(puns, orient='index')
 
-df = get_puns("semeval2017_task7/data/trial/subtask1-heterographic-trial.xml").rename(columns={'id': 'pun_id'}).set_index('pun_id')
 heterographic = get_puns("semeval2017_task7/data/test/subtask1-heterographic-test.xml").rename(columns={'id': 'pun_id'}).set_index('pun_id')
 homographic = get_puns("semeval2017_task7/data/test/subtask1-homographic-test.xml").rename(columns={'id': 'pun_id'}).set_index('pun_id')
-hetero_labels = pd.read_csv("semeval2017_task7/data/test/subtask1-heterographic-test.gold", names = ['id', 'label'], delim_whitespace=True).rename(columns={'id': 'pun_id'}).set_index('pun_id')
+heterograph_labels = pd.read_csv("semeval2017_task7/data/test/subtask1-heterographic-test.gold", names = ['id', 'label'], delim_whitespace=True).rename(columns={'id': 'pun_id'}).set_index('pun_id')
 homograph_labels = pd.read_csv("semeval2017_task7/data/test/subtask1-homographic-test.gold", names = ['id', 'label'], delim_whitespace=True).rename(columns={'id': 'pun_id'}).set_index('pun_id')
 
 heterographic['label'] = hetero_labels['label']
