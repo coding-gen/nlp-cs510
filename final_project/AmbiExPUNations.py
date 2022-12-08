@@ -32,7 +32,7 @@ homographic = get_puns("semeval2017_task7/data/test/subtask1-homographic-test.xm
 heterograph_labels = pd.read_csv("semeval2017_task7/data/test/subtask1-heterographic-test.gold", names = ['id', 'label'], delim_whitespace=True).rename(columns={'id': 'pun_id'}).set_index('pun_id')
 homograph_labels = pd.read_csv("semeval2017_task7/data/test/subtask1-homographic-test.gold", names = ['id', 'label'], delim_whitespace=True).rename(columns={'id': 'pun_id'}).set_index('pun_id')
 
-heterographic['label'] = hetero_labels['label']
+heterographic['label'] = heterograph_labels['label']
 homographic['label'] = homograph_labels['label']
 labelled_puns = pd.concat([heterographic, homographic])
 pd.reset_option('display.max_colwidth', None)
@@ -42,7 +42,7 @@ del labelled_puns
 del heterographic
 del homographic 
 del homograph_labels
-del hetero_labels
+del heterograph_labels
 
 
 dataset['Joke keywords'] = dataset['Joke keywords'].apply(np.hstack) #flatten
