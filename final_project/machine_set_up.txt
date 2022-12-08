@@ -1,0 +1,27 @@
+sudo apt-get update
+sudo apt-get install build-essential
+sudo apt install software-properties-common
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+sudo apt-get install manpages-dev
+
+sudo apt-get install python3
+sudo apt install python3-pip
+alias python='python3'
+export PATH="$PATH:/home/gen/.local/bin"
+sudo apt install python3-testresources
+
+sudo pip install -r requirements.txt
+
+git clone https://github.com/amazon-science/expunations.git
+wget -O semeval2017_task7.tar.xz https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/2445/semeval2017_task7.tar.xz?sequence=1&isAllowed=y 
+tar -xf semeval2017_task7.tar.xz
+ll expunations/data/
+
+
+
+
+
+
+
+
+
