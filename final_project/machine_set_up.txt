@@ -2,23 +2,13 @@ sudo apt-get update
 sudo apt-get install build-essential software-properties-common build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget manpages-dev
 
 sudo apt-get install python3
-sudo apt install python3-pip
+sudo apt install python3-pip python3-testresources
 alias python='python3'
-export PATH="$PATH:/home/gen/.local/bin"
-sudo apt install python3-testresources
+export PATH="$PATH:put_the_path_to_your_bin_here/bin"
 
 sudo pip install -r requirements.txt
 
 git clone https://github.com/amazon-science/expunations.git
 wget -O semeval2017_task7.tar.xz https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/2445/semeval2017_task7.tar.xz?sequence=1&isAllowed=y 
 tar -xf semeval2017_task7.tar.xz
-ll expunations/data/
-
-
-
-
-
-
-
-
-
+git clone git@github.com:coding-gen/nlp-cs510.git
