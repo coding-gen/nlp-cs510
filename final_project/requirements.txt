@@ -1,7 +1,6 @@
 pandas
 numpy
 simplet5
-
 scikit-learn
 nltk
 torch
@@ -11,4 +10,3 @@ transformers
 pytorch_transformers
 sentence-transformers
 matplotlib
-

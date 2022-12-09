@@ -1,8 +1,14 @@
 #! /usr/bin/python3
 
+"""
+authors: 
+Amber Shore, Genevieve LaLonde
+Natural Language Processing Fall 2022
+Portland State University
+"""
+
 import pandas as pd
 import numpy as np
-
 
 # expun_pilot = pd.read_json("expunations/data/expunations_annotated_pilot_100.json").rename(columns={'ID': 'pun_id'}).set_index('pun_id')
 expun = pd.read_json("expunations/data/expunations_annotated_full.json").rename(columns={'ID': 'pun_id'}).set_index('pun_id')
@@ -75,7 +81,6 @@ train, test = train_test_split(limited_dataset, test_size=0.3, random_state=0)
 test, eval = train_test_split(test, test_size=0.5, random_state=0)
 
 
-
 # Training T5
 
 from simplet5 import SimpleT5
@@ -96,10 +101,3 @@ model.train(train_df=train, # pandas dataframe with 2 columns: source_text & tar
             early_stopping_patience_epochs = 0,
             precision = 32
             )
-
-"""
-for i in test.index:
-        candidateSentences1 = model.predict(test.at[i, "source_text"])
-        print(test.at[i, 'source_text'])
-        print("Candidate sentences : ", candidateSentences1)
-""""
